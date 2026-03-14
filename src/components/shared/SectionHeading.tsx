@@ -1,5 +1,8 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import { Eyebrow, SectionLead, SectionTitle } from "@/components/ui/typography";
+import { TextType } from "@/components/ui/TextType";
+import { Eyebrow, SectionLead } from "@/components/ui/typography";
 
 type SectionHeadingProps = {
   eyebrow: string;
@@ -25,7 +28,19 @@ export function SectionHeading({
       )}
     >
       <Eyebrow>{eyebrow}</Eyebrow>
-      <SectionTitle>{title}</SectionTitle>
+      <TextType
+        as="h2"
+        className="font-display text-3xl uppercase tracking-[0.14em] text-white sm:text-4xl lg:text-[3.2rem]"
+        cursorBlinkDuration={0.65}
+        cursorCharacter="_"
+        cursorClassName="text-primary/80"
+        initialDelay={80}
+        loop={false}
+        retriggerOnVisible
+        startOnVisible
+        text={title}
+        typingSpeed={96}
+      />
       <SectionLead>{description}</SectionLead>
       <div className={cn("glow-divider max-w-40", align === "center" && "mx-auto")} />
     </div>

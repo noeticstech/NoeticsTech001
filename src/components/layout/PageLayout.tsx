@@ -1,10 +1,8 @@
 import type { ReactNode } from "react";
-import { FloatingNav } from "@/components/bonus/FloatingNav";
 import { ScrollProgress } from "@/components/bonus/ScrollProgress";
 import { AnimatedGrid } from "@/components/effects/AnimatedGrid";
 import { LightStreaks } from "@/components/effects/LightStreaks";
 import { StarfieldBackground } from "@/components/effects/StarfieldBackground";
-import { siteConfig } from "@/config/site";
 import { Navbar } from "./Navbar";
 
 type PageLayoutProps = {
@@ -22,7 +20,6 @@ export function PageLayout({ children }: PageLayoutProps) {
         <LightStreaks />
       </div>
       <Navbar />
-      <FloatingNav items={siteConfig.nav} />
       <main className="relative z-10">{children}</main>
     </div>
   );

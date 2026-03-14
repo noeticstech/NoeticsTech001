@@ -1,0 +1,18 @@
+.root {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.content {
+  color: inherit;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 0.25rem;
+  opacity: 1;
+}
+
+.cursorHidden {
+  opacity: 0;
+}

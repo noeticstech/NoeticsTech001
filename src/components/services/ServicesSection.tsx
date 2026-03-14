@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { FeatureGrid } from "@/components/ui/grid";
+import { MagicRings } from "@/components/effects/MagicRings";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 
 const serviceIcons = {
@@ -35,6 +36,28 @@ export function ServicesSection() {
           src={siteConfig.images.services}
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,8,23,0.8)_0%,rgba(3,8,23,0.64)_36%,rgba(3,8,23,0.95)_100%)]" />
+      </div>
+      <div aria-hidden="true" className="absolute inset-0 z-[1] overflow-hidden opacity-60">
+        <MagicRings
+          attenuation={8.5}
+          baseRadius={0.18}
+          blur={6}
+          color="#8d4dff"
+          colorTwo="#42fcff"
+          fadeIn={0.6}
+          fadeOut={0.42}
+          lineThickness={1.7}
+          noiseAmount={0.03}
+          opacity={0.9}
+          parallax={0.04}
+          radiusStep={0.07}
+          ringCount={6}
+          ringGap={1.38}
+          rotation={14}
+          scaleRate={0.075}
+          speed={0.72}
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(3,8,23,0.08)_0%,rgba(3,8,23,0.28)_56%,rgba(3,8,23,0.58)_100%)]" />
       </div>
       <Container className="relative z-10">
         <SectionHeading

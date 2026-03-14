@@ -8,7 +8,8 @@ import { siteConfig } from "@/config/site";
 import { heroSignals } from "@/config/sections";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { DisplayTitle, Eyebrow } from "@/components/ui/typography";
+import { TextType } from "@/components/ui/TextType";
+import { Eyebrow } from "@/components/ui/typography";
 import { HeroPlanet } from "./HeroPlanet";
 
 const heroChips = ["AI factions", "Player economy", "Persistent world"] as const;
@@ -44,7 +45,19 @@ export function HeroSection() {
               <Eyebrow className="text-primary">{siteConfig.hero.eyebrow}</Eyebrow>
             </div>
             <div className="space-y-5">
-              <DisplayTitle>{siteConfig.hero.title}</DisplayTitle>
+              <TextType
+                as="h1"
+                className="font-display text-4xl leading-[0.94] tracking-[0.08em] text-glow sm:text-5xl lg:text-7xl"
+                cursorBlinkDuration={0.65}
+                cursorClassName="text-primary/80"
+                cursorCharacter="_"
+                deletingSpeed={22}
+                initialDelay={180}
+                loop
+                pauseDuration={1200}
+                text={siteConfig.hero.title}
+                typingSpeed={110}
+              />
               <p className="max-w-xl text-base leading-7 text-muted md:text-lg md:leading-8">
                 {siteConfig.hero.subtitle}
               </p>

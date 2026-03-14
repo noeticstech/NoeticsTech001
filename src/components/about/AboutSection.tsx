@@ -3,9 +3,8 @@
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { aboutCapabilities, aboutStats } from "@/config/sections";
-import { siteConfig } from "@/config/site";
+import { SimulationStackCard } from "@/components/about/SimulationStackCard";
 import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
-import { MediaPanel } from "@/components/shared/MediaPanel";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Container } from "@/components/ui/container";
 
@@ -15,26 +14,23 @@ export function AboutSection() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[0.96fr_1.04fr]">
           <motion.div
+            className="relative flex flex-col items-center lg:min-h-[500px]"
             initial={{ opacity: 0, x: -24 }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true, amount: 0.3 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            <MediaPanel
-              alt="A holographic city and AI intelligence representing the NoeticsTech vision."
-              className="h-full"
-              imageClassName="object-cover object-center"
-              src={siteConfig.images.about}
-            >
-              <div className="card-surface absolute inset-x-6 bottom-6 rounded-[24px] p-5">
-                <p className="font-display text-sm uppercase tracking-[0.16em] text-primary">
-                  World Simulation Core
-                </p>
-                <p className="mt-3 max-w-md text-sm leading-6 text-white/80">
-                  Persistent state. Adaptive AI. Live economies.
-                </p>
-              </div>
-            </MediaPanel>
+            <div className="mt-28 flex w-full justify-center">
+              <SimulationStackCard />
+            </div>
+            <div className="mt-2 max-w-[22rem] space-y-3 text-center lg:absolute lg:left-30 lg:top-[6.1rem] lg:mt-0 lg:text-left">
+              <p className="font-display text-sm uppercase tracking-[0.16em] text-primary">
+                World Simulation Core
+              </p>
+              <p className="text-sm leading-6 text-white/80">
+                Persistent state. Adaptive AI. Live economies.
+              </p>
+            </div>
           </motion.div>
           <motion.div
             className="space-y-8"
